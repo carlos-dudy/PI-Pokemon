@@ -1,0 +1,38 @@
+.paginacion ul {
+    list-style: none;
+    text-align: center;
+}
+
+.paginacion li{
+    list-style: none;
+    text-align: center;;
+}
+
+.paginacion ul li{
+    display: inline-block;
+    margin-right:5px;
+}
+
+.paginacion ul li button{
+    display: block;
+    padding: 5px 20px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Architects Daughter', cursive;
+    background-color:white;
+    border-radius: 9999px;
+    overflow: hidden;
+    transition: all 500ms ease;
+    border: 2px solid rgb(149, 1, 1);
+    margin-bottom: 40px;
+    z-index: 0;
+    font-weight: 700;
+}
+.paginacion ul li button:hover{
+    background-color:rgb(149, 1, 1); 
+    box-shadow: rgb(149, 1, 1), 0 0 20 rgb(149, 1, 1); 
+    color: white;
+}
+
+
+
