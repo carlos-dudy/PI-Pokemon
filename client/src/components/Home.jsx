@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, filterByType, filterIfCreated, orderByName, orderByAttack, } from '../actions/index.js'
+import { getPokemons, filterByType, filterbyCreated, orderByName, orderByAttack, } from '../actions/index.js'
 import { Link } from 'react-router-dom';
 import Styles from './Home.module.css'
 import Card from './Card.jsx'
@@ -21,6 +21,7 @@ export default function Home() {
     const indexOfLastPokemons = currentPage * pokemonsPerPage;
     const indexOfFirstPokemons = indexOfLastPokemons - pokemonsPerPage;
     const currentPokemons = Array.isArray(allPokemons) && allPokemons?.slice(indexOfFirstPokemons, indexOfLastPokemons);
+    
     console.log(currentPokemons + "pokemon filtrado")
 
     const paginado = (pageNumbers) => {
@@ -34,6 +35,7 @@ export default function Home() {
     function handleClick(e) {
         e.preventDefault();
         dispatch(getPokemons());
+        setCurrentPage(1);
     }
 
     function handleFiltertype(e) {
@@ -44,7 +46,7 @@ export default function Home() {
 
     function handleFilterCreated(e) {
         e.preventDefault();
-        dispatch(filterIfCreated(e.target.value));
+        dispatch(filterbyCreated(e.target.value));
         setCurrentPage(1);
     }
     function handleOrder(e) {
@@ -73,67 +75,72 @@ export default function Home() {
                             RECARGAR <FcRefresh />
                         </button>
                         </li>
+                    </li>
+                </ul>
 
+                <ul>
+                    <li>
 
+                        <div className={Styles.filtrado}>
 
-
-                        <div className={Styles.todos}>
-                            <label className={Styles.a} >Orden Alfabetico: </label>
-                            <select onChange={(e) => handleOrder(e)} className={Styles.AZ}>
-                                <option value='A-Z'> A-Z </option>
-                                <option value='Z-A'> Z-A </option>
-                            </select>
-                            <div>
-
-                                <label className={Styles.a}>Ordenar por: </label>
-                                <select onChange={(e) => handleAttack(e)} className={Styles.Ataque}>
-                                    <option value='Asc'>Ataque Ascendente</option>
-                                    <option value='Des'>Ataque Descendente</option>
+                            <div className={Styles.todos}>
+                                <select className={Styles.select} onChange={(e) => handleOrder(e)} >
+                                    <option value='all'> Orden Alfabetico: </option>
+                                    <option value='A-Z'> A-Z </option>
+                                    <option value='Z-A'> Z-A </option>
                                 </select>
-
-                            </div>
-                            <div>
+                                <div>
 
 
-                                
-                                <select onChange={(e) => handleFilterCreated(e)} className={Styles.pokemones}>
-                                    <option value='all'>Filtrar por:</option>
-                                    <option value='existe'>Existentes</option>
-                                    <option value='creados'>Creados</option>
-                                </select>
+                                    <select className={Styles.select} onChange={(e) => handleAttack(e)} >
+                                        <option value='all'>Ordenar por:</option>
+                                        <option value='Asc'>Ataque Ascendente</option>
+                                        <option value='Des'>Ataque Descendente</option>
+                                    </select>
+
+                                </div>
+
+                                <div>
+                                    <select className={Styles.select} onChange={(e) => handleFilterCreated(e)} >
+                                        <option value='all'>Filtrar por:</option>
+                                        <option value='existe'>Existentes</option>
+                                        <option value='creados'>Creados</option>
+                                    </select>
+                                </div>
+                                <div className={Styles.tipos}>
+                                    <select className={Styles.select} onChange={(e) => handleFiltertype(e)}>
+                                        <option value='all'>Tipo de Pokemon:</option>
+                                        <option value='grass'>Grass</option>
+                                        <option value='poison'>Poison</option>
+                                        <option value='fire'>Fire</option>
+                                        <option value='flying'>Flying</option>
+                                        <option value='water'>Water</option>
+                                        <option value='bug'>Bug</option>
+                                        <option value='normal'>Normal</option>
+                                        <option value='electric'>Electric</option>
+                                        <option value='ground'>Ground</option>
+                                        <option value='fairy'>Fairy</option>
+                                        <option value='rock'>Rock</option>
+                                        <option value='ghost'>Ghost</option>
+                                        <option value='steel'>Steel</option>
+                                        <option value='psychic'>Psychic</option>
+                                        <option value='ice'>Ice</option>
+                                        <option value='dragon'>Dragon</option>+-
+                                        <option value='stedarkel'>Stedarkel</option>
+                                        <option value='shadow'>Shadow</option>
+                                        <option value='unknown'>Unknown</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div className={Styles.tipos}>
-                                <label className={Styles.a}>Tipos: </label>
-                                <select onChange={(e) => handleFiltertype(e)}>
-                                    <option value='all'>All</option>
-                                    <option value='grass'>Grass</option>
-                                    <option value='poison'>Poison</option>
-                                    <option value='fire'>Fire</option>
-                                    <option value='flying'>Flying</option>
-                                    <option value='water'>Water</option>
-                                    <option value='bug'>Bug</option>
-                                    <option value='normal'>Normal</option>
-                                    <option value='electric'>Electric</option>
-                                    <option value='ground'>Ground</option>
-                                    <option value='fairy'>Fairy</option>
-                                    <option value='rock'>Rock</option>
-                                    <option value='ghost'>Ghost</option>
-                                    <option value='steel'>Steel</option>
-                                    <option value='psychic'>Psychic</option>
-                                    <option value='ice'>Ice</option>
-                                    <option value='dragon'>Dragon</option>+-
-                                    <option value='stedarkel'>Stedarkel</option>
-                                    <option value='shadow'>Shadow</option>
-                                    <option value='unknown'>Unknown</option>
-                                </select>
-                            </div>
-                            <Paginado
-                                pokemonsPerPage={pokemonsPerPage}
-                                allPokemons={allPokemons}
-                                paginado={paginado} />
                         </div>
                     </li>
                 </ul>
+                                <div className={Styles.paginado}>
+                                    <Paginado
+                                        pokemonsPerPage={pokemonsPerPage}
+                                        allPokemons={allPokemons}
+                                        paginado={paginado} />
+                                </div>
             </div>
 
             <div className={Styles.Cards}>

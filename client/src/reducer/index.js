@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     pokemons: [],
-    allPokemons: [],
+    copiaPokemons: [],
     types: [],
     detalleId: {}
 
@@ -16,7 +16,7 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 pokemons: action.payload,
-                allPokemons: action.payload,
+                copiaPokemons: action.payload,
             }
         }
 
@@ -41,26 +41,26 @@ function rootReducer(state = initialState, action) {
 
 
         case FILTER_BY_TYPE: {
-            const filter = action.payload === 'all' ? state.allPokemons : state.allPokemons.filter(el => el.types.includes(action.payload))
-
+            const allPokemons= state.copiaPokemons
+            const filter = allPokemons.filter(el => (el.types[1]) ? el.types[1].name  === action.payload : el.types[0].name === action.payload)
             return {
                 ...state,
-                pokemons: filter,
+                pokemons: action.payload === "all"? allPokemons : filter
             }
         }
 
         case FILTER_BY_CREATED: {
-            const allPokemons = state.allPokemons
-            const filtrado = action.payload === 'creados' ? allPokemons.filter(el => el.createdInDb) : allPokemons.filter(el => !el.createdInDb);
+            const allPokemons = state.copiaPokemons
+            const filtrado = action.payload === 'creados' ? allPokemons.filter(el => typeof(el.id) !== 'number') : allPokemons.filter(el=> typeof(el.id) === 'number') 
             return {
                 ...state,
-                pokemons: action.payload === "all"? state.allPokemons : filtrado
+                pokemons: action.payload === "all"? state.copiaPokemons : filtrado
             }
         }
 
         case ORDER_BY_NAME: {
             let sortedPokemons = action.payload === 'A-Z' ?
-                state.allPokemons.sort(function (a, b) {
+                state.copiaPokemons.sort(function (a, b) {
                     if (a.name > b.name) {
                         return 1
                     } else if (b.name > a.name) {
@@ -68,7 +68,7 @@ function rootReducer(state = initialState, action) {
                     }
                     return 0;
 
-                }) : state.allPokemons.sort(function (a, b) {
+                }) : state.copiaPokemons.sort(function (a, b) {
                     if (a.name > b.name) {
                         return -1
                     } else if (b.name > a.name) {
@@ -85,7 +85,7 @@ function rootReducer(state = initialState, action) {
         case ORDER_BY_ATTACK: {
 
             let sortedPokemons = action.payload === 'Asc' ?
-                state.pokemons.sort(function (a, b) {
+                state.copiaPokemons.sort(function (a, b) {
                     if (a.attack > b.attack) {
                         return 1
                     } else if (b.attack > a.attack) {
@@ -93,7 +93,7 @@ function rootReducer(state = initialState, action) {
                     }
                     return 0;
 
-                }) : state.pokemons.sort(function (a, b) {
+                }) : state.copiaPokemons.sort(function (a, b) {
                     if (a.attack > b.attack) {
                         return -1
                     } else if (b.attack > a.attack) {

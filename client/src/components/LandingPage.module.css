@@ -11,13 +11,13 @@ height: 100vh;
 .logo{
   position: absolute;
   left:60px;
-  bottom: 550px;
+  bottom: 675px;
 }
 
 
 .bnt{
 position: fixed;
-left: 1430px;
+left: 1730px;
 bottom: 350px;
 height: 77px;
 width: 200px;

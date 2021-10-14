@@ -51,15 +51,23 @@
     flex-wrap: wrap;
     padding: 5px 5px;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu ul li {
     list-style: none;
     display: inline-block;
-    margin: 5px 10px;
+    margin: 2px 20px;
+    
 }
 .select{
     font-size: 20px;
+}
+.paginado{
+    display:flex;
+    justify-content: flex-end;
+
 }
 
 .menu{
@@ -137,4 +145,27 @@
           background-color:rgb(149, 1, 1); 
           box-shadow: rgb(149, 1, 1), 0 0 20 rgb(149, 1, 1); 
           color: white;
+        }
+
+        .select{
+        height: 40px;
+        width: 150px;
+        border-radius: 20px;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        font-family: 'Architects Daughter', cursive;
+        overflow: hidden;
+        transition: all 500ms ease;
+        border: 4px solid rgb(149, 1, 1);
+        margin-bottom: 40px;
+        z-index: 0;
+        text-align: center;
+        font-weight: 700;
+        padding: 4px 4px;
+        }
+
+        .filtrado{
+           margin-left: auto;
+           margin-right: auto;
+
         }

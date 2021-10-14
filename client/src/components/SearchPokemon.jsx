@@ -8,8 +8,6 @@ export default function SearchPokemon( ){
     
     const dispatch = useDispatch()
     const [name, setName]= useState(" ")
-    
-    console.log(dispatch)
 
     function handleInputChange(e){
         setName(e.target.value);

@@ -72,11 +72,13 @@ export function postPokemon(payload) {
 
 // filtramos por type
 export function filterByType(payload) {
-    // console.log(payload)
+    console.log(payload)
+   
     return {
         type: FILTER_BY_TYPE,
         payload
     }
+    
 }
 
 
@@ -96,7 +98,7 @@ export function orderByAttack(payload) {
     }
 }
 // Filtro por Creados o Existentes
-export function filterIfCreated(payload) {
+export function filterbyCreated(payload) {
     return {
         type: FILTER_BY_CREATED,
         payload

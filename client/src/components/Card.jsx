@@ -17,7 +17,7 @@ export function Card({ name, img, types,  }) {
             <div className={Styles.tipos}>
                 <h4>{types?.map((type, i) =>
                     <h3 key={i}>
-                        {`✔ ${type.toUpperCase()}`}
+                        {`✔ ${type.name.toUpperCase()}`}
                     </h3>)
                 }
                 </h4>

@@ -87,9 +87,9 @@ export default function PokemonId() {
                                 <div>
                                     <div>
                                         <label>Tipo:</label>
-                                    {state.types.map((type, i) =>
+                                    {state.types.map((el, i) =>
                                         <h3 key={i}>
-                                            {`✔ ${type.toUpperCase()}`}
+                                            {`✔ ${el.name.toUpperCase()}`}
                                         </h3>)
                                     }
                                     </div>
