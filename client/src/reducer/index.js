@@ -1,7 +1,6 @@
 import {
     GET_POKEMONS, GET_TYPES, ORDER_BY_NAME, GET_POKEMON_NAME, FILTER_BY_TYPE,
-    ORDER_BY_ATTACK, GET_ID , FILTER_BY_CREATED, CLEAN_TYPES, CLEAN_ID, POST_POKEONS
-} from '../actions/constantes'
+    ORDER_BY_ATTACK, GET_ID , FILTER_BY_CREATED, POST_POKEMONS } from '../actions/constantes'
 
 const initialState = {
     pokemons: [],
@@ -107,22 +106,12 @@ function rootReducer(state = initialState, action) {
             }
         }
 
-        case POST_POKEONS:
+        case POST_POKEMONS:
             return {
                 ...state,
             }
 
-        case CLEAN_TYPES:
-            return {
-                ...state,
-                types: []
-            }
-        case CLEAN_ID:
-            return {
-                ...state,
-                detalleId: action.payload
-            }
-
+        
         default: {
             return state
         }

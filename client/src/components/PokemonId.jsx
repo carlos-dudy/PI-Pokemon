@@ -20,7 +20,8 @@ export default function PokemonId() {
 
     useEffect(() => {
         getDetails();
-        setState()
+        return () => { 
+        setState({})}
     }, [])
 
     useEffect(() => {

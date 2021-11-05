@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
-    GET_POKEMONS, GET_TYPES, ORDER_BY_NAME, GET_POKEMON_NAME, FILTER_BY_TYPE, GET_DISPLAYS,
-    ORDER_BY_ATTACK, GET_ID, CLEAN_ID, FILTER_BY_CREATED
+    GET_POKEMONS, GET_TYPES, ORDER_BY_NAME, GET_POKEMON_NAME, FILTER_BY_TYPE,
+    ORDER_BY_ATTACK, GET_ID, FILTER_BY_CREATED
 } from './constantes'
 
 
@@ -43,8 +43,8 @@ export function getIds(id) {
                 type: GET_ID,
                 payload: urlId.data
             })
-        } catch (e) {
-            console.log(e)
+        } catch (err) {
+            console.log(err)
         }
     }
 }
@@ -72,7 +72,7 @@ export function postPokemon(payload) {
 
 // filtramos por type
 export function filterByType(payload) {
-    console.log(payload)
+    // console.log(payload)
    
     return {
         type: FILTER_BY_TYPE,
@@ -106,29 +106,3 @@ export function filterbyCreated(payload) {
 }
 
 
-
-//-----------------------------------------------------------------------------------------------------
-
-export const cleanId = () => (dispatch) => {
-    let rest = {};
-    dispatch({
-        type: CLEAN_ID,
-        payload: rest
-    })
-}
-
-export const clearState = (payload) => {
-    return (dispatch) =>
-        dispatch({
-            type: GET_DISPLAYS,
-            payload: payload
-        })
-}
-
-export const getDisplay = (payload) => {
-    return (dispatch) =>
-        dispatch({
-            type: GET_DISPLAYS,
-            payload: payload
-        })
-}

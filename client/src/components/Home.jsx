@@ -8,7 +8,7 @@ import Card from './Card.jsx'
 import SearchPokemon from './SearchPokemon.jsx'
 import Paginado from './Paginado.jsx'
 import { FcRefresh } from "react-icons/fc";
-import imgId from './imagenes/pokeId.png'
+
 
 
 export default function Home() {
@@ -155,7 +155,7 @@ export default function Home() {
                                 <fragment>
                                     <Link to={`/${poke.id}`}>
                                         <div className={Styles.Card}>
-                                            <Card key={i} name={poke.name} img={poke.img ? poke.img : <img src={imgId} alt='Pokemon' />} types={poke.types} />
+                                            <Card key={i} name={poke.name} img={poke.img} types={poke.types} />
                                         </div>
                                     </Link>
                                 </fragment>

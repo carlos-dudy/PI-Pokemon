@@ -2,6 +2,7 @@
     background-color: rgb(13, 107, 119);
     width: 100%;
     height: 250px;
+    
 }
 .Cargando{
     display: flex;
@@ -43,15 +44,18 @@
  }
 
 .Cards{
-   
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 13px;
     background-size: cover;
     position: absolute;
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
     padding: 5px 5px;
     justify-content: center;
-    margin-left: auto;
+    margin-left: 50px;
     margin-right: auto;
 }
 
@@ -88,7 +92,10 @@
     width: 300px;
     height: 40px;
 }
-
+.Cargando{
+    padding-left: 500px;
+    padding-top: 50px;
+}
 
 .cargar{
     list-style: none;
