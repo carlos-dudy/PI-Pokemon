@@ -1,9 +1,4 @@
-.Container {
-    background-color: rgb(13, 107, 119);
-    width: 100%;
-    height: 250px;
-    
-}
+
 .Cargando{
     display: flex;
     flex-wrap: wrap;
@@ -14,12 +9,17 @@
 }
 
 .menu{
-    width: 100%;
-    height: 250px;
-    padding:15px 0;
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
+    grid-template-columns: repeat(6, 2fr);
+ background: linear-gradient(180deg, #041f3f 0%, #313f77 100%);
+  box-shadow: 0px 1px 10px 5px #dddd6c;
+  position: block;
+  width: 100%;
+  
+  scroll-behavior: smooth;
+  display: flex;
+
 
 }
 .a{
@@ -45,32 +45,38 @@
 
 .Cards{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    grid-template-columns: repeat(3, 2fr);
+    /* list-style-type: none; */
+    padding-top: 50px;
+    /* grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 20px;
-    grid-row-gap: 13px;
-    background-size: cover;
-    position: absolute;
+    grid-row-gap: 13px; */
+    background-color: rgb(104, 101, 101);
+    /* position: absolute; */
+    /* display: flex; */
     align-items: center;
+    align-content: center;
     flex-wrap: wrap;
-    padding: 5px 5px;
+    padding: 50px 15px 15px 100px;
     justify-content: center;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     margin-right: auto;
 }
 
-.menu ul li {
+/* .menu ul li {
     list-style: none;
     display: inline-block;
     margin: 2px 20px;
     
-}
+} */
 .select{
     font-size: 20px;
 }
 .paginado{
     display:flex;
-    justify-content: flex-end;
+    justify-content: center;
 
 }
 

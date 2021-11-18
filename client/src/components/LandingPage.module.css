@@ -1,29 +1,26 @@
 
 .Inicio{
 background-image: url('./imagenes/Purple-Eared-Pikachu-Animation-by-moxie2D-Pikachu-art-.gif');
-background-size: 100%;
-background-repeat: no-repeat;
-background-position:center ;
-overflow: hidden;
+background-size: cover;
 height: 100vh; 
 }
 
 .logo{
   position: absolute;
   left:60px;
-  bottom: 675px;
+  bottom: 410px;
 }
 
 
 .bnt{
 position: fixed;
-left: 1730px;
-bottom: 350px;
+left: 1350px;
+bottom: 300px;
 height: 77px;
-width: 200px;
+width: 150px;
 border-radius: 12px;
 color: rgb(0, 0, 0);
-font-size: 28px;
+font-size: 20px;
 font-family: 'Architects Daughter', cursive;
 overflow: hidden;
 transition: all 500ms ease;

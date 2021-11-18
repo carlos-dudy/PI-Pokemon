@@ -34,7 +34,7 @@ export function getPokemonByName(name) {
 }
 
 // mostramos pokemon por ID- Pokemon Detalles
-export function getIds(id) {
+export function  getIds(id) {
     return async (dispatch) => {
         try {
 

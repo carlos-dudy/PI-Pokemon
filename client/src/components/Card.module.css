@@ -1,55 +1,106 @@
 .Container{
-    text-decoration: none;
-    width: 100%;
-    height: 350px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin:8px 8px ;
-    position: ab;
-    border-radius:  4px;
-    border: 3px solid rgba(0, 0, 0, 0.247);
-    background-image: url('./imagenes/pokemon-pixel-art-.jpg')
-}
-.Card{
-    position: relative;
-}
-.Container{
+    margin-bottom: 50px;
+    color: #1a1b1f;
+    font-family: "Mulish";
+    border-radius: 25px;
+    background-color: rgba(24, 24, 24, 0.349);
+    height: 450px;
+    width: 360px; 
+    font-size: 20px;
+    border: 3px solid transparent;
+    overflow: hidden;
+    transition: 100ms;
+    align-items: center;
     text-decoration: none;
     border-radius: 35px;
-    /* background-image: url('./imagenes/pokebola2.png'); */
-    background-size: 200%;
+    background-image: url('./imagenes/pokebola2.png');
+    background-size: 100%;
     background-repeat: no-repeat;
     overflow: hidden;  
-    height: 40vh;
 }
 
 .nombre{
-    text-decoration: none;
-    color: rgb(3, 3, 3);
-    font-size: 20px;
-    position: relative;
-    padding-top: 100px;
+    padding-top: 15px;
+    padding-bottom: 12px;
+    background-color: rgb(235, 217, 217);
+    align-content: center;
+    justify-content: center;
+    height: 70px;
+    text-align: center;
 }
-.h2{
-    text-decoration: none;
+.Card{
+    background-color:rgba(214, 207, 207, 0.315)
 }
+
+
 .tipos{
-    color: black;
-    font-size: 20px;
-    position: relative;
-    padding-top: 150px;
+   padding-bottom: 15px;
+   padding-top: 18px;
+   text-align: center;
+   background-color: rgb(235, 217, 217);
+   height: 120px;
+   display: flex;
+   flex-direction: row;
+   justify-content:  space-between;
+   padding-left: 20px;
+   padding-right: 20px;
+   
 }
+
+
+
+.bnt{
+    display:flex;
+    flex-direction: row-reverse;
+    font-size: 45px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: transparent;
+    background-color: transparent; 
+    border: 2px solid rgba(149, 1, 1, 0);
+    border-radius: 800px;
+    overflow: hidden;
+    transition: all 500ms ease;
+    margin-bottom: 40px;
+    z-index: 0;
+     
+}
+.bnt{
+    list-style: none;
+    text-align: center;
+  }
+
+   bnt::before{
+      content: " ";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      margin: auto;
+      transition: all 500ms ease;
+      z-index: -1;
+    } 
+    
+    
+    .bnt:hover{
+      background-color:rgb(36, 149, 1); 
+      box-shadow: rgb(43, 149, 1), 0 0 20 rgb(117, 247, 186); 
+    } 
+
 .img{
-    width: 200px;
-    height: 150px; 
+    align-items: center;
+    height: 215px;
+    width: 350px;
 }
 
 .fondoimg{
+    background-image: url('./imagenes/pokemon-pixel-art-.jpg');
     width: 50p;
     height: 100px;
 } 
-
+/* 
 .tipos{
     position: absolute;
     left: 35%;
@@ -58,11 +109,9 @@
    justify-content: center;
    display: flex;
    bottom: 100px;
-}
+} */
 
 .Container .Card{
-    width: 300px;
-    height: 310px;
     border-radius: 20px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0);
     overflow: hidden;

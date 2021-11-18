@@ -21,8 +21,7 @@ export default function Home() {
     const indexOfLastPokemons = currentPage * pokemonsPerPage;
     const indexOfFirstPokemons = indexOfLastPokemons - pokemonsPerPage;
     const currentPokemons = Array.isArray(allPokemons) && allPokemons?.slice(indexOfFirstPokemons, indexOfLastPokemons);
-    
-    console.log(currentPokemons + "pokemon filtrado")
+
 
     const paginado = (pageNumbers) => {
         setCurrentPage(pageNumbers)
@@ -130,19 +129,20 @@ export default function Home() {
                                         <option value='shadow'>Shadow</option>
                                         <option value='unknown'>Unknown</option>
                                     </select>
+
                                 </div>
                             </div>
                         </div>
                     </li>
                 </ul>
-                                <div className={Styles.paginado}>
-                                    <Paginado
-                                        pokemonsPerPage={pokemonsPerPage}
-                                        allPokemons={allPokemons}
-                                        paginado={paginado} />
-                                </div>
             </div>
 
+                <div className={Styles.paginado}>
+                    <Paginado
+                        pokemonsPerPage={pokemonsPerPage}
+                        allPokemons={allPokemons}
+                        paginado={paginado} />
+                </div>
             <div className={Styles.Cards}>
                 {
                     allPokemons.length === 0 ?
@@ -153,11 +153,11 @@ export default function Home() {
                         : currentPokemons.map((poke, i) => {
                             return (
                                 <fragment>
-                                    <Link to={`/${poke.id}`}>
-                                        <div className={Styles.Card}>
-                                            <Card key={i} name={poke.name} img={poke.img} types={poke.types} />
-                                        </div>
-                                    </Link>
+
+                                    <div className={Styles.Card}>
+                                        <Card key={i} name={poke.name} img={poke.img} types={poke.types} id={poke.id} />
+                                    </div>
+
                                 </fragment>
                             )
                         })

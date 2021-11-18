@@ -2,9 +2,7 @@ const { Pokemon, Type } = require('../db');
 const axios = require('axios');
 
 
-//Ruta para traer todo.
-
-// En caso de buscar por nombre primero cpnsultamos en la DB
+// En caso de buscar por nombre primero consultamos en la DB
 const getPokeByApi = async (req, res) => {
     let name = req.query.name;
     try {
@@ -53,6 +51,7 @@ const getPokeByApi = async (req, res) => {
 
         // mostrar toda la informacion de la api y la limitamos en 40. 
         const urlApi = await axios.get('http://pokeapi.co/api/v2/pokemon?limit=40');
+
         const db = await Pokemon.findAll({
             attributes: ['name', 'img', 'attack', 'defense', 'id'],
             include: {
@@ -167,7 +166,7 @@ const getTypes = async (req, res ) => {
 const postPokemon = async (req, res) => {
     let { name, img, hp, attack, defense, speed, height, weight, types } = req.body;
     console.log(types)
-    if (!name) return res.status(404).json('Nombre Invalido');
+    if (!name) return res.status(404).json('Nombre es Requerido');
 
     name = name.toLowerCase();
     let newPokemon = await Pokemon.create({
@@ -183,7 +182,7 @@ const postPokemon = async (req, res) => {
     let typeDb = await Type.findAll({
         where: { name: types }
     })
-    console.log(typeDb)
+    // console.log(typeDb)
 
     newPokemon.addType(typeDb)
     res.json(newPokemon)
