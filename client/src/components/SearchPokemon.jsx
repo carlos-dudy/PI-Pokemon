@@ -3,6 +3,7 @@ import {useState} from 'react'
 import { useDispatch } from 'react-redux';
 import {getPokemonByName } from '../actions/index'
 import Styles from './SearchPokemon.module.css'
+import { ImSearch } from "react-icons/im";
 
 export default function SearchPokemon( ){
     
@@ -23,13 +24,13 @@ export default function SearchPokemon( ){
 
 
     return (
-        <div className={Styles.Buscar}>
+        <div className={Styles.buscar}>
             <input className={Styles.input}
             type = "text" 
             placeholder = "...Nombre " 
             onChange= {(e) => handleInputChange(e)}
             />
-            <button className={Styles.bnt} type='Submit' onClick={(e) => handleSubmit(e)}>Buscar</button>
+            <button className={Styles.bnt} type='Submit' onClick={(e) => handleSubmit(e)}><ImSearch/></button>
         </div>
 
     )

@@ -1,8 +1,14 @@
+*{
+padding:0px;
+margin:0px;
+}
 
 .Inicio{
 background-image: url('./imagenes/Purple-Eared-Pikachu-Animation-by-moxie2D-Pikachu-art-.gif');
 background-size: cover;
 height: 100vh; 
+display: flex;
+
 }
 
 .logo{

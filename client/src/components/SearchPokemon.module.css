@@ -1,38 +1,47 @@
-.Buscar{
-    display: flex;
-    margin: 1rem 6rem;
-  }
+
+
   .input{
-    background-color:white;
-    border: 4px solid rgb(149, 1, 1);
-    border-radius: 9px;
+    background-color: transparent;
+    padding-left: 15px;
+    border: 3px solid rgba(49, 48, 48, 0.356);
+    border-radius: 999px;
     color: rgb(0, 0, 0);
     font-size: 28px;
     font-family: 'Architects Daughter', cursive;
     font-weight: 300;
-    width: 300px;
+    width: 250px;
     height: 40px;
-  
+  }
+  .input:hover {
+    background-color: rgba(202, 199, 199, 0.418);
+  }
+
+  .buscar{
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
   }
   .input:focus {
     outline: none;
+    color: rgba(255, 255, 255, 0.952);
   }
   .input::placeholder {
-    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.952);
   }
   .bnt{
+  background-color: transparent;
     height: 40px;
-    width: 100px;
-    border-radius: 12px;
+    width: 50px;
+    border-radius: 9999px;
     color: rgb(0, 0, 0);
-    font-size: 18px;
-    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
     overflow: hidden;
     transition: all 500ms ease;
-    border: 4px solid rgb(149, 1, 1);
-    margin-bottom: 40px;
+    border: 0px solid transparent;
     z-index: 0;
-    font-weight: 700;
+
   }
     
   .bnt{
@@ -46,15 +55,15 @@
       right: 0;
       top: 0;
       margin: auto;
-      background-color:rgb(149, 1, 1); 
+      background-color:rgb(65, 61, 61); 
       transition: all 500ms ease;
       z-index: -1;
     }
     
     
     .bnt:hover{
-      background-color:rgb(149, 1, 1); 
-      box-shadow: rgb(149, 1, 1), 0 0 20 rgb(149, 1, 1); 
-      color: white;
+      background-color:rgb(126, 123, 123); 
+      box-shadow: rgb(149, 1, 1), 0 0 20 rgb(235, 161, 161); 
+      color: rgb(255, 255, 255);
     }
   

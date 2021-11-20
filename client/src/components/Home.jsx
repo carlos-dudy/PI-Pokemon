@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, filterByType, filterbyCreated, orderByName, orderByAttack, } from '../actions/index.js'
+import { getPokemons, filterByType, getTypes, filterbyCreated, orderByName, orderByAttack, } from '../actions/index.js'
 import { Link } from 'react-router-dom';
 import Styles from './Home.module.css'
 import Card from './Card.jsx'
@@ -15,6 +15,7 @@ export default function Home() {
 
     const dispatch = useDispatch();
     const allPokemons = useSelector((state) => state.pokemons);
+    const types = useSelector((state) => state.types);
     const [orden, setOrden] = useState('') //me trae todo lo que esta en el estado pokemons
     const [currentPage, setCurrentPage] = useState(1);
     const [pokemonsPerPage, setPokemonsPerPage] = useState(9)
@@ -26,6 +27,10 @@ export default function Home() {
     const paginado = (pageNumbers) => {
         setCurrentPage(pageNumbers)
     }
+
+    useEffect(() => {
+        dispatch(getTypes())
+    }, [dispatch])
 
     useEffect(() => {
         dispatch(getPokemons())
@@ -65,6 +70,7 @@ export default function Home() {
     return (
         < div className={Styles.Container}>
             <div className={Styles.menu}>
+                <div>
                 <ul>
                     <li><h1>¡POKEMON MAGAZINE!</h1></li>
                     <li><SearchPokemon /></li>
@@ -76,11 +82,11 @@ export default function Home() {
                         </li>
                     </li>
                 </ul>
-
+                </div>
                 <ul>
                     <li>
 
-                        <div className={Styles.filtrado}>
+                        
 
                             <div className={Styles.todos}>
                                 <select className={Styles.select} onChange={(e) => handleOrder(e)} >
@@ -106,43 +112,28 @@ export default function Home() {
                                         <option value='creados'>Creados</option>
                                     </select>
                                 </div>
+
                                 <div className={Styles.tipos}>
-                                    <select className={Styles.select} onChange={(e) => handleFiltertype(e)}>
-                                        <option value='all'>Tipo de Pokemon:</option>
-                                        <option value='grass'>Grass</option>
-                                        <option value='poison'>Poison</option>
-                                        <option value='fire'>Fire</option>
-                                        <option value='flying'>Flying</option>
-                                        <option value='water'>Water</option>
-                                        <option value='bug'>Bug</option>
-                                        <option value='normal'>Normal</option>
-                                        <option value='electric'>Electric</option>
-                                        <option value='ground'>Ground</option>
-                                        <option value='fairy'>Fairy</option>
-                                        <option value='rock'>Rock</option>
-                                        <option value='ghost'>Ghost</option>
-                                        <option value='steel'>Steel</option>
-                                        <option value='psychic'>Psychic</option>
-                                        <option value='ice'>Ice</option>
-                                        <option value='dragon'>Dragon</option>+-
-                                        <option value='stedarkel'>Stedarkel</option>
-                                        <option value='shadow'>Shadow</option>
-                                        <option value='unknown'>Unknown</option>
-                                    </select>
+                                    <select className={Styles.select} onChange={handleFiltertype} >
+                                        {
+                                            types.map((p, i) => (
+                                                <option key={i} value={p.name}>{p.name}</option>))
+                                        }
+                                    </select >
 
                                 </div>
                             </div>
-                        </div>
+                      
                     </li>
                 </ul>
             </div>
 
-                <div className={Styles.paginado}>
-                    <Paginado
-                        pokemonsPerPage={pokemonsPerPage}
-                        allPokemons={allPokemons}
-                        paginado={paginado} />
-                </div>
+            <div className={Styles.paginado}>
+                <Paginado
+                    pokemonsPerPage={pokemonsPerPage}
+                    allPokemons={allPokemons}
+                    paginado={paginado} />
+            </div>
             <div className={Styles.Cards}>
                 {
                     allPokemons.length === 0 ?
