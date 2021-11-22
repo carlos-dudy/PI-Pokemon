@@ -69,71 +69,71 @@ export default function Home() {
 
     return (
         < div className={Styles.Container}>
+
             <div className={Styles.menu}>
-                <div>
-                <ul>
-                    <li><h1>¡POKEMON MAGAZINE!</h1></li>
-                    <li><SearchPokemon /></li>
-                    <li><Link to='/create'><button className={Styles.bnt}>CREAR POKEMON</button></Link></li>
-                    <li className={Styles.titulo}>
-                        <li><button className={Styles.cargar} onClick={e => { handleClick(e) }}>
-                            RECARGAR <FcRefresh />
+
+                <div className={Styles.div1}>
+
+                    <div><SearchPokemon /></div>
+
+                    <div className={Styles.A1}>
+                        <Link to='/create'><button className={Styles.bnt}>CREAR POKEMON</button></Link>
+                    </div>
+
+                    <div className={Styles.A1}>
+                        <button className={Styles.cargar} onClick={e => { handleClick(e) }}>
+                            <FcRefresh />
                         </button>
-                        </li>
-                    </li>
-                </ul>
+                    </div>
+
+
                 </div>
-                <ul>
-                    <li>
-
-                        
-
-                            <div className={Styles.todos}>
-                                <select className={Styles.select} onChange={(e) => handleOrder(e)} >
-                                    <option value='all'> Orden Alfabetico: </option>
-                                    <option value='A-Z'> A-Z </option>
-                                    <option value='Z-A'> Z-A </option>
-                                </select>
-                                <div>
 
 
-                                    <select className={Styles.select} onChange={(e) => handleAttack(e)} >
-                                        <option value='all'>Ordenar por:</option>
-                                        <option value='Asc'>Ataque Ascendente</option>
-                                        <option value='Des'>Ataque Descendente</option>
-                                    </select>
+                <div className={Styles.Filtros}>
 
-                                </div>
+                    <select className={Styles.select} onChange={(e) => handleOrder(e)} >
+                        <option value='all'> Orden Alfabetico: </option>
+                        <option value='A-Z'> A-Z </option>
+                        <option value='Z-A'> Z-A </option>
+                    </select>
 
-                                <div>
-                                    <select className={Styles.select} onChange={(e) => handleFilterCreated(e)} >
-                                        <option value='all'>Filtrar por:</option>
-                                        <option value='existe'>Existentes</option>
-                                        <option value='creados'>Creados</option>
-                                    </select>
-                                </div>
+                    <div>
+                        <select className={Styles.select} onChange={(e) => handleAttack(e)} >
+                            <option value='all'>Ordenar por:</option>
+                            <option value='Asc'>Ataque Ascendente</option>
+                            <option value='Des'>Ataque Descendente</option>
+                        </select>
+                    </div>
 
-                                <div className={Styles.tipos}>
-                                    <select className={Styles.select} onChange={handleFiltertype} >
-                                        {
-                                            types.map((p, i) => (
-                                                <option key={i} value={p.name}>{p.name}</option>))
-                                        }
-                                    </select >
+                    <div>
+                        <select className={Styles.select} onChange={(e) => handleFilterCreated(e)} >
+                            <option value='all'>Filtrar por:</option>
+                            <option value='existe'>Existentes</option>
+                            <option value='creados'>Creados</option>
+                        </select>
+                    </div>
 
-                                </div>
-                            </div>
-                      
-                    </li>
-                </ul>
-            </div>
+                    <div className={Styles.tipos}>
+                        <select className={Styles.select} onChange={handleFiltertype} >
+                            {
+                                types.map((p, i) => (
+                                    <option key={i} value={p.name}>{p.name}</option>))
+                            }
+                        </select >
+
+                    </div>
+
+                </div>
 
             <div className={Styles.paginado}>
-                <Paginado
+                <Paginado className={Styles.numeros}
                     pokemonsPerPage={pokemonsPerPage}
                     allPokemons={allPokemons}
                     paginado={paginado} />
             </div>
+            </div>
+
             <div className={Styles.Cards}>
                 {
                     allPokemons.length === 0 ?
