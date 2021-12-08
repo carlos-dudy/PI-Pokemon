@@ -1,0 +1,58 @@
+.Container{
+    margin-bottom: 50px;
+    color: #7a0303;
+    font-family: "Mulish";
+    border-radius: 25px;
+    height: 400px;
+    width: 300px; 
+    font-size: 20px;
+    box-shadow: 1px 1px 10px 5px  #dddd6c;
+    overflow: hidden;
+    transition: 100ms;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 35px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;  
+   background-color: rgba(192, 191, 191, 0.247);
+}
+
+.Card{
+    background-image: url(../imagenes/pokemon-pixel-art-.jpg);
+    background-size: cover;
+    display: flex;
+    border-radius: 800px;
+    border: 3px solid rgba(129, 129, 129, 0.137);
+    
+}
+
+.img{
+    align-items: center;
+    height: 200px;
+    width: 295px;
+}
+
+.nombre{
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    color: burlywood;
+    padding-top: 15px;
+    padding-bottom: 12px;
+    font-size: 25px;
+    }
+
+    .tipos{
+        padding-bottom: 15px;
+        padding-top: 18px;
+        text-align: center;
+        background-color: #dddd6c;
+        height: 120px;
+        display: flex;
+        flex-direction: row; 
+        justify-content:  space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+     }

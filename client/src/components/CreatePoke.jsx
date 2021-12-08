@@ -78,8 +78,7 @@ export default function CreatePoke() {
         console.log(input.types.length)
     }
 
-    function handleSubmit(e) {
-        
+    function handleSubmit(e) {  
         e.preventDefault();
         console.log(input)
         dispatch(postPokemon(input))

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPokemons, filterByType, getTypes, filterbyCreated, orderByName, orderByAttack, } from '../actions/index.js'
 import { Link } from 'react-router-dom';
 import Styles from './Home.module.css'
-import Card from './Card.jsx'
+import Card from './Card'
 import SearchPokemon from './SearchPokemon.jsx'
 import Paginado from './Paginado.jsx'
 import { FcRefresh } from "react-icons/fc";
@@ -43,6 +43,7 @@ export default function Home() {
     }
 
     function handleFiltertype(e) {
+        e.preventDefault();
         dispatch(filterByType(e.target.value));
         setCurrentPage(1);
         setOrden(`Ordenado ${e.target.value}`);
@@ -77,7 +78,7 @@ export default function Home() {
                     <div><SearchPokemon /></div>
 
                     <div className={Styles.A1}>
-                        <Link to='/create'><button className={Styles.bnt}>CREAR POKEMON</button></Link>
+                        <Link to='/create'><button className={Styles.bnt}>Crear Pokemon</button></Link>
                     </div>
 
                     <div className={Styles.A1}>
@@ -144,7 +145,6 @@ export default function Home() {
                         : currentPokemons.map((poke, i) => {
                             return (
                                 <fragment>
-
                                     <div className={Styles.Card}>
                                         <Card key={i} name={poke.name} img={poke.img} types={poke.types} id={poke.id} />
                                     </div>
