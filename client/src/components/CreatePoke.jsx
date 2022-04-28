@@ -52,6 +52,7 @@ export default function CreatePoke() {
         speed: 0,
         types: []
     });
+ 
 
     function handleChange(e){
         setInput(values=>({

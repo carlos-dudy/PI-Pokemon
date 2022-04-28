@@ -1,30 +1,45 @@
 .Cargando{
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     width: 100%;
     height: 250px;
-    align-items: center;
+}
+.Container{
+background-color: rgb(245, 22, 22); 
+}
+.allMenu{
+    display: flex;
+    justify-content: center
+}
+.menu{
+   /* background: linear-gradient(180deg, #2825f086 0%, rgb(211, 239, 243));  */
+    width: 90%;
+    flex-direction: flex;
+    justify-content:space-around;
+}
+.allFilter{
+    display: flex;
+    justify-content: center
 }
 
-.menu{
-   background-color:  #363636 ;
-    width: 100%;
-    flex-direction: flex;
-    justify-content:space-between;
-    padding-left: 20px;
-}
 .Filtros{
+    width: 60%;
      display:flex;
      justify-content:space-between;
-     margin: 25px;
  }
+
 .div1{
-    padding-top: 20px;
+    padding: 10px;
+    display: flex;
     flex-direction: row;
     justify-content:space-between;
-    display: flex;
    
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .a{
     color:rgb(255, 255, 255);
@@ -51,9 +66,9 @@
 .Cards{
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(3, 2fr);
+    grid-template-columns: repeat(5, 2fr);
     padding-top: 50px;
-    background-color: rgb(102, 101, 101);
+    /* background-color: rgb(211, 239, 243); */
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
@@ -68,79 +83,39 @@
 }
 
 .paginado{
-    position: relative;
     display:flex;
     justify-content: center;
-    background-color: rgba(0, 255, 255, 0);
 }
 
-.cargar{
-    background-color: transparent;
-    border: 0px solid transparent;
-    border-radius: 999px;
-    color: rgb(255, 255, 255);
-    font-size: 35px;
-    padding: 5px;
-}
 .Cargando{
     padding-left: 500px;
     padding-top: 50px;
 }
 
 .cargar{
-    list-style: none;
-    text-align: center;
+    background-color: transparent;
+    border-color: #f1c40f;
+    border-radius: 10px;
+    color: #f1c40f;
+    font-size: 24px;
       }
 
-  .cargar::before{
-      content: " ";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      margin: auto;
-      background-color:rgb(149, 1, 1); 
-      transition: all 500ms ease;
-      z-index: -1;
-    }
-    
-    
-    .cargar:hover{
-        background-color: rgba(202, 199, 199, 0.418);
-      box-shadow: rgb(149, 1, 1), 0 0 20 rgb(149, 1, 1); 
-      color: white;
-    }
-
-    .bnt{
-        border-radius: 10px;
+  .create{
         background-color: transparent;
-        color: rgb(0, 0, 0);
-        font-size: 28px;
-        font-family: 'Architects Daughter', cursive;
         border-color: #f1c40f;
-        box-shadow: 0 0 40px 40px #f1c40f inset, 0 0 0 0 #f1c40f;
-        -webkit-transition: all 150ms ease-in-out;
-        transition: all 150ms ease-in-out;
-        font-weight: 300;
-        width: 250px;
-        height: 40px;
+        border-radius: 10px;
+        color: #f1c40f;
+        font-size: 24px;
+
         }
 
-        .A1{
-            padding-top: 20px;
-        }
-        
-        
-        .bnt:hover{
-            box-shadow: 0 0 10px 0 #f1c40f inset, 0 0 10px 4px #f1c40f;
-            color:rgb(0, 0, 0)
-        }
+       
 
-        .select{
-        height: 40px;
+    .select{
+        height: 35px;
         width: 200px;
         border-radius: 10px;
-        font-size: 18px;
+        font-size: 16px;
         font-family: 'Architects Daughter', cursive;
         overflow: hidden;
         transition: all 500ms ease;

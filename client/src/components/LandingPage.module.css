@@ -1,43 +1,179 @@
-*{
-padding:0px;
-margin:0px;
+.container{
+  background-color: rgb(245, 22, 22);
+  height:100%;
 }
-
-.Inicio{
-background-image: url('./imagenes/poke-fuego.jpg');
-background-size: cover;
-height: 100vh; 
-display: flex;
-
+.containerInfo{
+  display: flex;
+  justify-content: center ;
+  flex-direction: column;
 }
-
-.logo{
-  position: absolute;
-  left:60px;
-  bottom: 410px;
-}
-
-
 .bnt{
-position: fixed;
-left: 1350px;
-bottom: 300px;
-height: 77px;
-width: 150px;
-border-radius: 10px;
-border-color: #3498db;
-  color: #fff;
-  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-  -webkit-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
-font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+.Pokebolas{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.img{
+  width: 100px;
+  height: 100px;
+}
+.titulo{
+  margin-top:50px;
+  margin-bottom:50px; 
+  display: flex;
+  justify-content: center;
+}
+.texto{
+  display: flex;
+  justify-content: center; 
+  color: white;
+}
+.Pokebolas2{
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
-
-.bnt:hover{
-  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
-  color: #3498db;
+.img:hover{
+  -webkit-transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
 }
 
+@media screen and (max-width: 750px) {
+  .container {
+    background-color: rgb(89, 139, 231);
+  }
+  .img{
+    width: 90px;
+    height: 90px;
+  }
+
+  .texto{
+    font-size: 12px;
+  }
+  .logo{
+    height:150px;
+  }
+} 
+
+@media screen and (max-width: 600px) {
+  .container {
+    background-color: rgb(89, 139, 231);
+  }
+  .img{
+    width: 80px;
+    height: 80px;
+  }
+
+  .texto{
+    font-size: 12px;
+  }
+  .logo{
+    height:150px;
+  }
+} 
 
 
+@media screen and (max-width: 500px) {
+  .container {
+    background-color: rgb(89, 139, 231);
+  }
+  .img{
+    padding: 5px;
+    width: 70px;
+    height: 70px;
+  }
+.titulo{
+  margin:0;
+  padding:0;
+}
+  .texto{
+    font-size: 12px;
+  }
+  .logo{
+    height:150px;
+  }
+} 
+
+@media screen and (max-width: 360px ) {
+  .container {
+    background-color: rgb(245, 22, 22);
+    width: 100%;
+    height: 100%;
+  }
+  .Pokebolas{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .img{
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+  }
+.logo{
+  width: 280px;
+}
+.titulo{
+  margin-top:20px;
+  margin-bottom:20px; 
+}
+  .texto{
+    font-size: 9px;
+  }
+  .logo{
+    height:150px;
+  }
+  .Pokebolas2{
+    display: flex;
+ flex-direction: reverse;
+    flex-wrap: wrap-reverse;
+  }
+} 
+@media screen and (max-width: 640px), (max-height:360px) {
+  .container {
+    background-color: rgb(245, 22, 22);
+    width: 100%;
+    height: 100%;
+  }
+  .Pokebolas{
+    margin: 3px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .img{
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+  }
+.logo{
+  width: 280px;
+}
+.titulo{
+  margin-top:5px;
+  margin-bottom:5px; 
+}
+  .texto{
+    margin: 0;
+    font-size: 9px;
+  }
+  .logo{
+    height:150px;
+  }
+  .Pokebolas2{
+    display: flex;
+ flex-direction: reverse;
+    flex-wrap: wrap-reverse;
+    margin:0;
+  }
+} 

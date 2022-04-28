@@ -28,6 +28,7 @@ export default function SearchPokemon( ){
             <input className={Styles.input}
             type = "text" 
             placeholder = "...Nombre " 
+            value={name}
             onChange= {(e) => handleInputChange(e)}
             />
             <button className={Styles.bnt} type='Submit' onClick={(e) => handleSubmit(e)}><ImSearch/></button>

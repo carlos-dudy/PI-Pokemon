@@ -1,42 +1,29 @@
-
-
-  .input{
-    background-color: transparent;
-    padding-left: 15px;
-    border: 3px solid rgba(49, 48, 48, 0.356);
-    border-radius: 999px;
-    color: rgb(255, 255, 255);
-    font-size: 28px;
+.input{
+    border: 3px solid rgb(49, 48, 48);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
     font-family: 'Architects Daughter', cursive;
-    font-weight: 300;
-    border-color:  #f1c40f;
-  color: #fff;
-  box-shadow: 0 0 40px 40px transparent inset, 0 0 0 0 #f1c40f;
-  -webkit-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
+    border-color: rgba(240, 248, 255, 0.205);
+   box-shadow: 0 0 40px 40px transparent inset, 0 0 0 0 rgba(240, 248, 255, 0.205);
   }
-  .input:hover {
-    box-shadow: 0 0 10px 0 #f1c40f inset, 0 0 10px 4px #f1c40f;
+.input:hover {
+    box-shadow: 0 0 10px 0 rgba(240, 248, 255, 0.205) inset, 0 0 10px 4px rgba(240, 248, 255, 0.205);
   }
 
-  .buscar{
-    padding-bottom: 20px;
-    padding-top: 20px;
-    
-  }
-  .input:focus {
+.input:focus {
     outline: none;
-    color: rgba(255, 255, 255, 0.952);
+    color: rgba(0, 0, 0, 0.952);
   }
-  .input::placeholder {
+.input::placeholder {
     color: rgba(2, 2, 2, 0.952);
   }
-  .bnt{
+.bnt{
   background-color: transparent;
     height: 40px;
     width: 50px;
     border-radius: 9999px;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 196, 0);
     font-size: 24px;
     overflow: hidden;
     transition: all 500ms ease;
@@ -52,6 +39,6 @@
      
     
     .bnt:hover{
-      box-shadow: 0 0 10px 0 #f1c40f inset, 0 0 10px 4px #f1c40f;
+      box-shadow: 0 0 10px 0 rgba(240, 248, 255, 0.205) inset, 0 0 10px 4px rgba(240, 248, 255, 0.205);
     }
   

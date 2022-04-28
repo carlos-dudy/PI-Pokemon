@@ -4,11 +4,12 @@ import {
     ORDER_BY_ATTACK, GET_ID, FILTER_BY_CREATED
 } from './constantes'
 
+const URL = "http://localhost:8080"
 
 // traer toda la data de la api
 export function getPokemons() {
     return async function (dispatch) {
-        var poke = await axios.get('http://localhost:3001/pokemons')
+        var poke = await axios.get(URL + '/pokemons')
         dispatch({
             type: GET_POKEMONS,
             payload: poke.data
@@ -22,7 +23,7 @@ export function getPokemons() {
 export function getPokemonByName(name) {
     return async function (dispatch) {
         try {
-            let pokemon = await axios.get("http://localhost:3001/pokemons?name=" + name)
+            let pokemon = await axios.get(URL +"/pokemons?name=" + name)
             return dispatch({
                 type: GET_POKEMON_NAME,
                 payload: pokemon.data
@@ -38,7 +39,7 @@ export function  getIds(id) {
     return async (dispatch) => {
         try {
 
-            let urlId = await axios.get('http://localhost:3001/pokemons/' + id)
+            let urlId = await axios.get(URL + '/pokemons/' + id)
             dispatch({
                 type: GET_ID,
                 payload: urlId.data
@@ -52,7 +53,7 @@ export function  getIds(id) {
 // traemos los types de pokemones
 export function getTypes() {
     return async function (dispatch) {
-        let type = await axios.get('http://localhost:3001/type')
+        let type = await axios.get(URL + '/type')
         dispatch({
             type: GET_TYPES,
             payload: type.data
@@ -63,7 +64,7 @@ export function getTypes() {
 // ruta para crear Pokemon
 export function postPokemon(payload) {
     return async function (dispatch) {
-        const response = await axios.post('http://localhost:3001/pokemons', payload)
+        const response = await axios.post(URL + '/pokemons', payload)
         console.log(response)
         return response;
     }

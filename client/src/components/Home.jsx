@@ -7,7 +7,9 @@ import Styles from './Home.module.css'
 import Card from './Card'
 import SearchPokemon from './SearchPokemon.jsx'
 import Paginado from './Paginado.jsx'
-import { FcRefresh } from "react-icons/fc";
+
+
+import { BiPlus, BiReset } from "react-icons/bi";
 
 
 
@@ -18,7 +20,7 @@ export default function Home() {
     const types = useSelector((state) => state.types);
     const [orden, setOrden] = useState('') //me trae todo lo que esta en el estado pokemons
     const [currentPage, setCurrentPage] = useState(1);
-    const [pokemonsPerPage, setPokemonsPerPage] = useState(9)
+    const [pokemonsPerPage, setPokemonsPerPage] = useState(10)
     const indexOfLastPokemons = currentPage * pokemonsPerPage;
     const indexOfFirstPokemons = indexOfLastPokemons - pokemonsPerPage;
     const currentPokemons = Array.isArray(allPokemons) && allPokemons?.slice(indexOfFirstPokemons, indexOfLastPokemons);
@@ -70,29 +72,14 @@ export default function Home() {
 
     return (
         < div className={Styles.Container}>
-
+            <div className={Styles.allMenu}>
             <div className={Styles.menu}>
 
                 <div className={Styles.div1}>
 
-                    <div><SearchPokemon /></div>
-
-                    <div className={Styles.A1}>
-                        <Link to='/create'><button className={Styles.bnt}>Crear Pokemon</button></Link>
-                    </div>
-
-                    <div className={Styles.A1}>
-                        <button className={Styles.cargar} onClick={e => { handleClick(e) }}>
-                            <FcRefresh />
-                        </button>
-                    </div>
-
-
-                </div>
-
-
-                <div className={Styles.Filtros}>
-
+                    <div className={Styles.search}>
+                        <SearchPokemon/>
+                        </div>
                     <select className={Styles.select} onChange={(e) => handleOrder(e)} >
                         <option value='all'> Orden Alfabetico: </option>
                         <option value='A-Z'> A-Z </option>
@@ -119,19 +106,40 @@ export default function Home() {
                         <select className={Styles.select} onChange={handleFiltertype} >
                             {
                                 types.map((p, i) => (
-                                    <option key={i} value={p.name}>{p.name}</option>))
+                                    <option key={i} value={p.name}>{p.name.charAt(0).toUpperCase() + p.name.slice(1)}</option>))
                             }
                         </select >
 
                     </div>
 
+
+
                 </div>
 
-            <div className={Styles.paginado}>
+<div className={Styles.allFilter}>
+                <div className={Styles.Filtros}>
+
+                <div className={Styles.A1}>
+                        <Link to='/create'><button className={Styles.create}><BiPlus/></button></Link>
+                    </div>
+
+                    <div className={Styles.paginado}>
                 <Paginado className={Styles.numeros}
                     pokemonsPerPage={pokemonsPerPage}
                     allPokemons={allPokemons}
                     paginado={paginado} />
+            </div>
+
+                    <div className={Styles.A1}>
+                        <button className={Styles.cargar} onClick={e => { handleClick(e) }}>
+                            <BiReset />
+                        </button>
+                    </div>
+
+                </div>
+                </div>
+
+            
             </div>
             </div>
 
@@ -154,6 +162,7 @@ export default function Home() {
                         })
                 }
             </div>
+            
 
         </div>
     )
