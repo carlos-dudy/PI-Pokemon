@@ -5,7 +5,9 @@
     height:280px;
     width: 220px; 
     font-size: 16px;
-    border: 3px solid rgb(255, 255, 255);
+    border: 3.5px solid #f1c40f;
+    border-inline-color: #f1c40f;
+    border-bottom-color: #f1c40f;
     overflow: hidden;
     transition: 100ms;
     align-items: center;
@@ -18,7 +20,7 @@
   
 }
 .Container:hover{
-    box-shadow: 0px 5px 5px 0px  rgb(214, 214, 214);
+    box-shadow: 0px 5px 5px 0px  rgba(214, 214, 214, 0.769);
 }
 
 .nombre{
@@ -36,7 +38,8 @@
 
 
 .tipos{
-    font-size:14px;
+    font-size:15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
    padding-bottom: 15px;
    padding-top: 18px;
    text-align: justify;

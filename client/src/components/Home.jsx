@@ -73,96 +73,97 @@ export default function Home() {
     return (
         < div className={Styles.Container}>
             <div className={Styles.allMenu}>
-            <div className={Styles.menu}>
+                <div className={Styles.menu}>
 
-                <div className={Styles.div1}>
+                    <div className={Styles.div1}>
 
-                    <div className={Styles.search}>
-                        <SearchPokemon/>
+                        <div className={Styles.search}>
+                            <SearchPokemon />
                         </div>
-                    <select className={Styles.select} onChange={(e) => handleOrder(e)} >
-                        <option value='all'> Orden Alfabetico: </option>
-                        <option value='A-Z'> A-Z </option>
-                        <option value='Z-A'> Z-A </option>
-                    </select>
-
-                    <div>
-                        <select className={Styles.select} onChange={(e) => handleAttack(e)} >
-                            <option value='all'>Ordenar por:</option>
-                            <option value='Asc'>Ataque Ascendente</option>
-                            <option value='Des'>Ataque Descendente</option>
+                        <select className={Styles.select} onChange={(e) => handleOrder(e)} >
+                            <option value='all'> Orden Alfabetico: </option>
+                            <option value='A-Z'> A-Z </option>
+                            <option value='Z-A'> Z-A </option>
                         </select>
-                    </div>
 
-                    <div>
-                        <select className={Styles.select} onChange={(e) => handleFilterCreated(e)} >
-                            <option value='all'>Filtrar por:</option>
-                            <option value='existe'>Existentes</option>
-                            <option value='creados'>Creados</option>
-                        </select>
-                    </div>
-
-                    <div className={Styles.tipos}>
-                        <select className={Styles.select} onChange={handleFiltertype} >
-                            {
-                                types.map((p, i) => (
-                                    <option key={i} value={p.name}>{p.name.charAt(0).toUpperCase() + p.name.slice(1)}</option>))
-                            }
-                        </select >
-
-                    </div>
-
-
-
-                </div>
-
-<div className={Styles.allFilter}>
-                <div className={Styles.Filtros}>
-
-                <div className={Styles.A1}>
-                        <Link to='/create'><button className={Styles.create}><BiPlus/></button></Link>
-                    </div>
-
-                    <div className={Styles.paginado}>
-                <Paginado className={Styles.numeros}
-                    pokemonsPerPage={pokemonsPerPage}
-                    allPokemons={allPokemons}
-                    paginado={paginado} />
-            </div>
-
-                    <div className={Styles.A1}>
-                        <button className={Styles.cargar} onClick={e => { handleClick(e) }}>
-                            <BiReset />
-                        </button>
-                    </div>
-
-                </div>
-                </div>
-
-            
-            </div>
-            </div>
-
-            <div className={Styles.Cards}>
-                {
-                    allPokemons.length === 0 ?
-                        <div className={Styles.Cargando}>
-                            <img src='https://pa1.narvii.com/6982/fd63ecdd3d57be8d4832917f7e1aaa812d904833r1-800-800_hq.gif'
-                                alt='Cargando' />
+                        <div>
+                            <select className={Styles.select} onChange={(e) => handleAttack(e)} >
+                                <option value='all'>Ordenar por:</option>
+                                <option value='Asc'>Ataque Ascendente</option>
+                                <option value='Des'>Ataque Descendente</option>
+                            </select>
                         </div>
-                        : currentPokemons.map((poke, i) => {
-                            return (
-                                <fragment>
-                                    <div className={Styles.Card}>
-                                        <Card key={i} name={poke.name} img={poke.img} types={poke.types} id={poke.id} />
-                                    </div>
 
-                                </fragment>
-                            )
-                        })
-                }
+                        <div>
+                            <select className={Styles.select} onChange={(e) => handleFilterCreated(e)} >
+                                <option value='all'>Filtrar por:</option>
+                                <option value='existe'>Existentes</option>
+                                <option value='creados'>Creados</option>
+                            </select>
+                        </div>
+
+                        <div className={Styles.tipos}>
+                            <select className={Styles.select} onChange={handleFiltertype} >
+                                {
+                                    types.map((p, i) => (
+                                        <option key={i} value={p.name}>{p.name.charAt(0).toUpperCase() + p.name.slice(1)}</option>))
+                                }
+                            </select >
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div className={Styles.allFilter}>
+                        <div className={Styles.Filtros}>
+
+                            <div className={Styles.A1}>
+                                <Link to='/create'><button className={Styles.create}><BiPlus /></button></Link>
+                            </div>
+
+                            <div className={Styles.paginado}>
+                                <Paginado className={Styles.numeros}
+                                    pokemonsPerPage={pokemonsPerPage}
+                                    allPokemons={allPokemons}
+                                    paginado={paginado} />
+                            </div>
+
+                            <div className={Styles.A1}>
+                                <button className={Styles.cargar} onClick={e => { handleClick(e) }}>
+                                    <BiReset />
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
-            
+            <div className={Styles.allCards}>
+                <div className={Styles.Cards}>
+                    {
+                        allPokemons.length === 0 ?
+                            <div className={Styles.Cargando}>
+                                <img src='https://pa1.narvii.com/6982/fd63ecdd3d57be8d4832917f7e1aaa812d904833r1-800-800_hq.gif'
+                                    alt='Cargando' />
+                            </div>
+                            : currentPokemons.map((poke, i) => {
+                                return (
+                                    <fragment>
+                                        <div className={Styles.Card}>
+                                            <Card key={i} name={poke.name} img={poke.img} types={poke.types} id={poke.id} />
+                                        </div>
+
+                                    </fragment>
+                                )
+                            })
+                    }
+                </div>
+            </div>
+
 
         </div>
     )

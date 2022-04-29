@@ -20,7 +20,8 @@ background-color: rgb(245, 22, 22);
 }
 .allFilter{
     display: flex;
-    justify-content: center
+    justify-content: center;
+    
 }
 
 .Filtros{
@@ -62,19 +63,20 @@ background-color: rgb(245, 22, 22);
     align-items: center;
   
  }
+ .allCards{
+     display:flex;
+     align-items: center;
+ }
 
 .Cards{
     display: grid;
     align-items: center;
     grid-template-columns: repeat(5, 2fr);
-    padding-top: 50px;
-    /* background-color: rgb(211, 239, 243); */
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
     padding: 50px 15px 15px 100px;
     justify-content: center;
-    margin-right: auto;
 }
 
 .select{
