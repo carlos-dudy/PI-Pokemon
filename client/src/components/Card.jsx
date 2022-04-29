@@ -2,6 +2,7 @@ import React from "react";
 import Styles from "./Card.module.css";
 import { Link } from "react-router-dom"
 import { FcPlus } from "react-icons/fc";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 
 export function Card({ name, img, types, id }) {
@@ -26,17 +27,18 @@ export function Card({ name, img, types, id }) {
             <div className={Styles.footerCard}>
 
                 <div className={Styles.tipos}>
-                    <h4>
+                    <h3>
                         {
                             types?.map((type, i) =>
                                 <h3 key={i}>
-                                    {`✔ ${type.name.toUpperCase()}`}
+                                    {`⭐ ${type.name.toUpperCase()}`}
+                                  
                                 </h3>)
                         }
-                    </h4>
+                    </h3>
                     <div className={Styles.position}>
                         <Link to={`/${id}`} >
-                            <button className={Styles.bnt}> <FcPlus /> </button>
+                            <button className={Styles.btn}> <AiOutlinePlusCircle /> </button>
                         </Link>
                     </div>
 

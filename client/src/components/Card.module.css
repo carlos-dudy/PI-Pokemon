@@ -1,11 +1,11 @@
 .Container{
     font-family: 'Josefin Sans', sans-serif;
     border-radius: 10px;
-    background-color: rgba(240, 248, 255, 0.205);
+    background-color: #f1c40f;
     height:280px;
     width: 220px; 
     font-size: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.651);
+    border: 3px solid rgb(255, 255, 255);
     overflow: hidden;
     transition: 100ms;
     align-items: center;
@@ -24,77 +24,54 @@
 .nombre{
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size:16px;
-    /* background: linear-gradient(180deg, #2825f086 0%, #ffffff81); */
+    font-size:18px;
     align-content: center;
     justify-content: center;
     height:30px;
     text-align: center;
     color:rgb(255, 255, 255);
-   -webkit-text-stroke: 1px rgb(0, 0, 0);
+   -webkit-text-stroke: 2px rgb(245, 22, 22);
 }
 
 
 
 .tipos{
+    font-size:14px;
    padding-bottom: 15px;
    padding-top: 18px;
-   text-align: center;
-   background-color: #ffffff6e;
+   text-align: justify;
+   background-color: rgba(245, 22, 22, 0.721);
    height: 120px;
    display: flex;
    flex-direction: row; 
-   justify-content:  space-between;
+   justify-content:  space-around;
    padding-left: 20px;
    padding-right: 20px;
    color:rgb(255, 255, 255);
-   -webkit-text-stroke: 1px rgb(255, 0, 0);
-
-   
-   
+   -webkit-text-stroke: 1.5px rgb(245, 22, 22);
 }
 
 
 
-.bnt{
+.btn{
     display:flex;
     flex-direction: row-reverse;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color:  #f1c40f;
     font-size: 45px;
     padding-bottom: 5px;
     padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: transparent;
-    background-color: transparent; 
-    border: 2px solid rgba(149, 1, 1, 0);
-    border-radius: 800px;
-    overflow: hidden;
-    transition: all 500ms ease;
     margin-bottom: 40px;
-    z-index: 0;
-     
 }
-.bnt{
-    list-style: none;
-    text-align: center;
-  }
-
-   bnt::before{
-      content: " ";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      margin: auto;
-      transition: all 500ms ease;
-      z-index: -1;
-    } 
+   
     
-    
-    .bnt:hover{
-      background-color:rgb(133, 136, 132); 
-      box-shadow: rgb(132, 134, 132), 0 0 20 rgb(117, 247, 186); 
-    } 
+.btn:hover {
+    border-radius: 999px;
+      box-shadow: 3px 3px 3px #f1c40f; 
+ } 
 
 .img{
     align-items: center;
@@ -142,7 +119,7 @@
 }
 
 .Card .img:hover{
-    transform: translate(-15px);
+    transform: translate(+15px);
     
 }
 
