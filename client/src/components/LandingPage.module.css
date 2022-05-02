@@ -1,5 +1,5 @@
 .container{
-  background-color: rgb(245, 22, 22);
+  background-color: red;
   height:100%;
 }
 .containerInfo{
@@ -32,7 +32,7 @@
 .texto{
   display: flex;
   justify-content: center; 
-  color: white;
+  color: yellow;
 }
 .Pokebolas2{
   margin-top: 50px;
