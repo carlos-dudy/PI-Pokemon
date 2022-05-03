@@ -1,11 +1,11 @@
 .input{
-    border: 3px solid rgb(49, 48, 48);
+    border: 3px solid red;
     border-radius: 10px;
-    color: rgb(0, 0, 0);
     font-size: 20px;
-    font-family: 'Architects Daughter', cursive;
-    border-color: rgba(240, 248, 255, 0.205);
-   box-shadow: 0 0 40px 40px transparent inset, 0 0 0 0 rgba(240, 248, 255, 0.205);
+    font-weight: 700;
+    color: red;
+    padding-left: 10px;
+    font-family: 'Architects Daughter';
   }
 .input:hover {
     box-shadow: 0 0 10px 0 rgba(240, 248, 255, 0.205) inset, 0 0 10px 4px rgba(240, 248, 255, 0.205);
@@ -13,17 +13,20 @@
 
 .input:focus {
     outline: none;
-    color: rgba(0, 0, 0, 0.952);
+    color: red;
+   
   }
 .input::placeholder {
-    color: rgba(2, 2, 2, 0.952);
+    color: red;
+    
   }
+
 .bnt{
   background-color: transparent;
     height: 40px;
     width: 50px;
     border-radius: 9999px;
-    color: #f1c40f;
+    color: red;
     font-size: 24px;
     overflow: hidden;
     transition: all 500ms ease;
@@ -39,6 +42,6 @@
      
     
     .bnt:hover{
-      box-shadow: 3px 3px 3px 0 #f1c40f;
+      box-shadow: 3px 3px 3px 0 red;
     }
   

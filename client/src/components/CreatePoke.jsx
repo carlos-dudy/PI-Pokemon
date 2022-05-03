@@ -109,7 +109,7 @@ export default function CreatePoke() {
             <div className={Styles.nav}>
             <div>
                 <Link to='./home' ><button className={Styles.btn}><BsArrowLeftSquareFill /></button></Link>
-            </div>
+            </div>-
 
             <div className={Styles.title}>
                 <h1> Creá tu Pokemon</h1>

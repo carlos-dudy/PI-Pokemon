@@ -1,74 +1,83 @@
-.Cargando{
+.Cargando {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 250px;
 }
-.Container{
-background-color: red; 
+
+.Container {
+    background-color: red;
 }
-.allMenu{
-    display: flex;
-    justify-content: center
-}
-.menu{
-   /* background: linear-gradient(180deg, #2825f086 0%, rgb(211, 239, 243));  */
-    width: 90%;
-    flex-direction: flex;
-    justify-content:space-around;
-}
-.allFilter{
+
+.allMenu {
     display: flex;
     justify-content: center;
-    
+    background-color: yellow;
 }
 
-.Filtros{
-    width: 60%;
-     display:flex;
-     justify-content:space-between;
- }
+.menu {
+    /* background: linear-gradient(180deg, #2825f086 0%, rgb(211, 239, 243));  */
+    width: 90%;
+    flex-direction: flex;
+    justify-content: space-around;
+}
 
-.div1{
+.allFilter {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.Filtros {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div1 {
     padding: 10px;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
-   
+    justify-content: space-between;
+
 }
-.search{
+
+.search {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.a{
-    color:rgb(255, 255, 255);
-    font-size: 20px ;
+
+.a {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- } 
- 
- .todos{
-     display: flex;
-     text-decoration: none;
-     position: absolute;
-     color: white;
-    flex-direction: row;
-    justify-content:  space-between;
-    align-items: center;
-  
- }
- .allCards{
-     display:flex;
-     align-items: center;
- }
+}
 
-.Cards{
+.todos {
+    display: flex;
+    text-decoration: none;
+    position: absolute;
+    color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.allCards {
+    display: flex;
+    align-items: center;
+}
+
+.Cards {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(5, 2fr);
@@ -79,63 +88,72 @@ background-color: red;
     justify-content: center;
 }
 
-.select{
+.select {
     font-size: 20px;
-    
+
 }
 
-.paginado{
-    display:flex;
+.paginado {
+    display: flex;
     justify-content: center;
 }
 
-.Cargando{
+.Cargando {
     padding-left: 500px;
     padding-top: 50px;
 }
 
-.cargar{
+
+.cargar {   
+    display: flex;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: red;
+    font-size: 40px;
+}
+.cargar:hover{
+    border-radius: 999px;
+    box-shadow: 3px 3px 3px red;
+}
+
+.create {
+    display: flex;
     background-color: transparent;
     border-color: #f1c40f;
+    border: 2px solid transparent;
     border-radius: 10px;
-    color: #f1c40f;
-    font-size: 24px;
-      }
+    color: red;
+    font-size: 40px;
+}
+.create:hover{
+    border-radius: 999px;
+    box-shadow: 3px 3px 3px red;
+}
 
-  .create{
-        background-color: transparent;
-        border-color: #f1c40f;
-        border-radius: 10px;
-        color: #f1c40f;
-        font-size: 24px;
 
-        }
+.select {
+    height: 35px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Architects Daughter', cursive;
+    overflow: hidden;
+    transition: all 500ms ease;
+    z-index: 0;
+    text-align: center;
+    font-weight: 700;
+    padding: 4px 4px;
+    border-color: #f1c40f;
+    color: rgb(0, 0, 0);
+    background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
 
-       
-
-    .select{
-        height: 35px;
-        width: 200px;
-        border-radius: 10px;
-        font-size: 16px;
-        font-family: 'Architects Daughter', cursive;
-        overflow: hidden;
-        transition: all 500ms ease;
-        z-index: 0;
-        text-align: center;
-        font-weight: 700;
-        padding: 4px 4px;
-        border-color: #f1c40f;
-        color: rgb(0, 0, 0);
-        background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
-        background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
-        background-position: 100%;
-        background-size: 400%;
-        -webkit-transition: background 300ms ease-in-out;
-        transition: background 300ms ease-in-out;
-        }
-        
-        .select:hover{
-            background-position: 0; 
-        }
-     
+.select:hover {
+    background-position: 0;
+}
