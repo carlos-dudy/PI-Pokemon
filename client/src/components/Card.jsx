@@ -35,7 +35,7 @@ export function Card({ name, img, types, id }) {
                         {
                             types.map((type, i) =>
                                 <h3 key={i}>
-                                     `⭐{type.name.toUpperCase()}`
+                                     ⭐{type.name.toUpperCase()}
 
                                 </h3>)
                                 

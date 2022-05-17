@@ -1,10 +1,9 @@
 .contenedor{
     background-color: yellow;
     background-position: center;
-   
     background-size:  cover;
-    
 }
+
 .nav{
     height: 70px;
     width: 100%;
@@ -13,6 +12,7 @@
     justify-content: space-around;
     align-items: center;
 }
+
 .btn{
     display:flex;
     background-color: transparent;
@@ -24,29 +24,31 @@
     padding-left: 5px;
     padding-right: 5px;
 }
+
 .btn:hover{
    background-color:yellow;
     color:  red;
     font-size: 30px;
     border-radius: 10px;
 }
+
 .title{
     font-size:26px;
     color:rgb(255, 255, 255);
     font-family: 'Josefin Sans', sans-serif;
     -webkit-text-stroke: 2px yellow;
 }
+
 .position{
     display: flex;
     justify-content: space-around;
     align-items: center; 
     padding-top: 20px;
     padding-bottom: 20px;
-   
 }
 
 .form{
-    background-image: url(./imagenes/pokebola2.png);
+    /* background-image: url(./imagenes/pokebola2.png); */
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -55,11 +57,12 @@
     border-radius: 10px;
     width: 80%;
     height:500px;
-    background-color: rgba(218, 214, 214, 0.293);
+    background-color: rgba(255, 255, 255, 0.293);
 }
+
 label{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size:15px;
+    -webkit-text-stroke: 2px red;
     font-weight: bold;
 }
 
@@ -81,7 +84,7 @@ label{
 }
 .input{
     width: 80%;
-    background-color: yellow;
+    background-color: transparent;
     border-radius: 5px;
     border: 2px solid red;
     font-size: 22px;
@@ -101,18 +104,132 @@ input[type="range"]::-webkit-appearance{
 
 } */
 
-.rango{
-    -webkit-appearance: none;
+input[type=range] {
     width: 100%;
-    height: 7px;
-    outline: none;
-    border-radius: 3px;
-}
-
-.rango::-webkit-slider-thumb{
+    margin: 13.8px 0;
+    background-color: transparent;
     -webkit-appearance: none;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    background: red;
+    border: 0.2px solid #010101;
+    border-radius: 1.3px;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+
+  }
+  input[type=range]::-webkit-slider-thumb {
+    margin-top: -14px;
+    width: 16px;
+    height: 36px;
+    background: yellow;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
     
+    -webkit-appearance: none;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: red;
+  }
+  input[type=range]::-moz-range-track {
+    background: red;
+    border: 0.2px solid #010101;
+    background-image:linear-gradient(to right, #02C38A  calc(var(--value)*1%), black 0);
+    border-radius: 1.3px;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+  }
+  input[type=range]::-moz-range-thumb {
+    width: 16px;
+    height: 36px;
+    background: yellow;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 14.8px 0;
+    color: transparent;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: red;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: red;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+  }
+  input[type=range]::-ms-thumb {
+    width: 16px;
+    height: 36px;
+    background: yellow;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 0px;
+    /*Needed to keep the Edge thumb centred*/
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: red;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: red;
+  }
+  /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+  how to remove the virtical space around the range input in IE*/
+  @supports (-ms-ime-align:auto) {
+    /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+    input[type=range] {
+      margin: 0;
+      /*Edge starts the margin from the thumb, not the track as other browsers do*/
+    }
+  }
+  
+.createBtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   
+}
+
+.submit{
+    background-color: red ;
+}
+
+.containerImg{
+    border: 2px solid rgb(128, 0, 126);
+    border-radius: 10px;
+    max-width: 180px;
+    max-height: 180px;
+    background-color: rgba(255, 255, 255, 0.323);
+}
+.imgName{
+    color: transparent;
+    max-width: 175px;
+}
+.imagenSubida{
+    max-width: 175px;
+    max-height: 175px;
 }
 
 
+.alerta{
+    margin-top: 20px;
+    color: rgb(2, 59, 3);
+    font-size: 18px;
 
+}

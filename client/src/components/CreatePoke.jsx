@@ -40,6 +40,8 @@ export default function CreatePoke() {
     const dispatch = useDispatch()
     const history = useHistory()
     const types = useSelector(state => state.types)
+    const [loading, setLoading] = useState(false);
+    const [image, setImage] = useState("");
     const [errores, setErrores] = useState({})
 
     const [input, setInput] = useState({
@@ -53,6 +55,7 @@ export default function CreatePoke() {
         speed: 0,
         types: []
     });
+    console.log(input)
 
 
     function handleChange(e) {
@@ -102,120 +105,163 @@ export default function CreatePoke() {
     useEffect(() => {
         dispatch(getTypes());
     }, [dispatch]);
+    const uploadImage = async (e) => {
+        const files = e.target.files;
+        const data = new FormData();
+        data.append("file", files[0]);
+        data.append("upload_preset", "htnah6yo");
+        setLoading(true);
+
+        const res = await fetch(
+            "https://api.cloudinary.com/v1_1/djrddcab5/image/upload",
+            {
+                method: "POST",
+                body: data,
+            }
+        );
+
+        const file = await res.json();
+        setImage(file.secure_url);
+    };
+
 
 
     return (
         <div className={Styles.contenedor}>
             <div className={Styles.nav}>
-            <div>
-                <Link to='./home' ><button className={Styles.btn}><BsArrowLeftSquareFill /></button></Link>
-            </div>-
+                <div>
+                    <Link to='./home' ><button className={Styles.btn}><BsArrowLeftSquareFill /></button></Link>
+                </div>-
 
-            <div className={Styles.title}>
-                <h1> Creá tu Pokemon</h1>
-            </div>
+                <div className={Styles.title}>
+                    <h1> Creá tu Pokemon</h1>
+                </div>
             </div>
 
             <div className={Styles.position}>
-            
+
                 <form onSubmit={handleSubmit} className={Styles.form}>
                     <div className={Styles.izq}>
-                    <div>
-                        <label className={Styles.lbl}><span className={Styles.spa} >Nombre:</span ></label>
                         <div>
-                            <input className={Styles.input} onChange={handleChange} type='text' name="name" autoComplete="off" required />
-                            {errores.name && (
-                                <p className={Styles.errores}>{errores.name}</p>
-                            )}
+                            <label className={Styles.lbl}><span className={Styles.spa} >Nombre:</span ></label>
+                            <div>
+                                <input className={Styles.input} onChange={handleChange} type='text' name="name" autoComplete="off" required />
+                                {errores.name && (
+                                    <p className={Styles.errores}>{errores.name}</p>
+                                )}
+                            </div>
                         </div>
-                    </div>
 
-                    
 
-                    <div>
-                        <label> Vida: </label>
-                        <div>
-                            <input onChange={handleChange} className={Styles.rango} type='range' min="0" max="4" name='hp' />
-                            {errores.hp && (
-                                <p className={Styles.errores}>{errores.hp}</p>
-                            )}
-                        </div>
-                    </div>
 
-                    <div>
-                        <label >Ataque: </label>
                         <div>
-                            <input className={Styles.rango} onChange={handleChange} type='range' min="0" max="4" name='attack' />
-                            {errores.attack && (
-                                <p className={Styles.errores}>{errores.attack}</p>
-                            )}
+                            <label> Vida: </label>
+                            <div>
+                                <input onChange={handleChange} className={Styles.rango} type='range' min="0" max="200" name='hp' />
+                                {errores.hp && (
+                                    <p className={Styles.errores}>{errores.hp}</p>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label >Defensa: </label>
+
                         <div>
-                            <input className={Styles.rango} onChange={handleChange} type='range' min="0" max="4" name='defense' />
-                            {errores.defense && (
-                                <p className={Styles.errores}>{errores.defense}</p>
-                            )}
+                            <label >Ataque: </label>
+                            <div>
+                                <input className={Styles.rango} onChange={handleChange} type='range' min="0" max="200" name='attack' />
+                                {errores.attack && (
+                                    <p className={Styles.errores}>{errores.attack}</p>
+                                )}
+                            </div>
                         </div>
-                    </div>
+                        <div>
+                            <label >Defensa: </label>
+                            <div>
+                                <input className={Styles.rango} onChange={handleChange} type='range' min="0" max="200" name='defense' />
+                                {errores.defense && (
+                                    <p className={Styles.errores}>{errores.defense}</p>
+                                )}
+                            </div>
+                        </div>
                     </div>
                     <div className={Styles.der}>
-                    <div>
-                        <label >Velocidad: </label>
                         <div>
-                            <input className={Styles.rango} onChange={handleChange} type='range' min="0" max="4" name='speed' />
-                            {errores.speed && (
-                                <p className={Styles.errores}>{errores.speed}</p>
-                            )}
+                            <label >Velocidad: </label>
+                            <div>
+                                <input className={Styles.rango} onChange={handleChange} type='range' min="0" max="200" name='speed' />
+                                {errores.speed && (
+                                    <p className={Styles.errores}>{errores.speed}</p>
+                                )}
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <label >Altura: </label>
                         <div>
-                            <input className={Styles.rango} onChange={handleChange} type='range' min="0" max="4" name='height' />
-                            {errores.height && (
-                                <p className={Styles.errores}>{errores.height}</p>
-                            )}
+                            <label >Altura: </label>
+                            <div>
+                                <input className={Styles.rango} onChange={handleChange} type='range' min="0" max="200" name='height' />
+                                {errores.height && (
+                                    <p className={Styles.errores}>{errores.height}</p>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label >Peso: </label>
                         <div>
-                            <input className={Styles.rango} onChange={handleChange} type='range' name='weight' />
-                            {errores.weight && (
-                                <p className={Styles.errores}>{errores.weight}</p>
-                            )}
+                            <label >Peso: </label>
+                            <div>
+                                <input className={Styles.rango} onChange={handleChange} type='range' name='weight' />
+                                {errores.weight && (
+                                    <p className={Styles.errores}>{errores.weight}</p>
+                                )}
+                            </div>
                         </div>
-                    </div>
 
-                    <label > Tipo de Pokemon: </label>
-                    <select className={Styles.select} onChange={handleSelect} >
-                        {
-                            types.map((p, i) => (
-                                <option key={i} value={p.name}>{p.name}</option>))
-                        }
-                    </select >
-                    {errores.types && (
-                        <p className={Styles.errores}>{errores.types}</p>
-                    )}
-                    <ul>
-                        <li>{input.types.map(tipo => " ⭐" + tipo + '.' )}</li>
-                    </ul>
+                        <label > Tipo de Pokemon: </label>
+                        <select className={Styles.select} onChange={handleSelect} >
+                            {
+                                types.map((p, i) => (
+                                    <option key={i} value={p.name}>{p.name}</option>))
+                            }
+                        </select >
+                        {errores.types && (
+                            <p className={Styles.errores}>{errores.types}</p>
+                        )}
+                        <ul>
+                            <li>{input.types.map(tipo => " ⭐" + tipo + '.')}</li>
+                        </ul>
                     </div>
                     <div>
-                        <label >Imagen:</label>
-                        <div>
-                            <input onChange={handleChange} type='file' name='img' />
+                        <div className={Styles.inputImg}>
+                            <label >Imagen:</label>
+                            <div>
+                                <br /><br /><br /><br />
+                                <input
+                                    className={Styles.img}
+                                    onChange={uploadImage}
+                                    type="file"
+                                    name="image"
+                                    required="required"
+                                    accept="image/png,image/jpeg"
+                                />
+                                {errores.image ? <p>{errores.image}</p> : null}
+                            </div>
+                            <div className={Styles.imgName}>{(input.img = image)}</div>
+                            <label>
+                                {loading ? (
+                                    <div className={Styles.containerImg}>
+
+                                        <img className={Styles.imagenSubida} src={image} alt="No hay imagen" />
+                                    </div>
+                                ) : (
+                                    <div className={Styles.alerta}>
+                                        <p>Aun no has subido una imagen</p>
+                                    </div>
+                                )}
+                            </label>
                         </div>
                     </div>
-                    <div>
+                    <div className={Styles.createBtn}>
                         <button className={Styles.submit} type='submit'>Crear Pokemon</button>
                     </div>
                 </form>
-            
+
             </div>
         </div>
 
